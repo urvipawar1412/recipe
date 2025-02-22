@@ -1,0 +1,249 @@
+/* ----- RESET & BASE STYLES ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+  }
+  
+  /* ----- LAYOUT CONTAINER ----- */
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* ----- SIDEBAR ----- */
+  .sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+  .logo-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .logo {
+    width: 150px;
+    height: 100px;
+    margin-right: 0.5rem;
+  }
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF6B00; /* Matches the main background color */
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: #FF6B00;
+  }
+  .message-btn {
+    margin-top: 2rem;
+    background-color: #FF6B00;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  .message-btn:hover {
+    background-color: #ff7f1a;
+  }
+  
+  /* ----- MAIN CONTENT ----- */
+  .main-content {
+    flex: 1;
+    background-color: #FF6B00; /* Neon orange background */
+    padding: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ----- HERO SECTION ----- */
+  .hero {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .hero-text span {
+    color: #FFE600; /* Bright yellow accent */
+  }
+  .hero-text p {
+    color: #f0f0f0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* ----- SEARCH INPUT ----- */
+  .search-input {
+    width: 50%;
+    max-width: 400px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* ----- CATEGORY BUTTONS ----- */
+  .categories {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .category-btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .category-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  .category-btn:hover {
+    background-color: #ffe8d9;
+  }
+  
+  /* ----- TRENDING RECIPES ----- */
+  .trending {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    max-width: 900px;
+    color: #333;
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .trending-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .trending-header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+  .trending-header h2 {
+    font-size: 1.5rem;
+    color: #FF6B00;
+    font-weight: bold;
+  }
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .recipe-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .recipe-card h3 {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  .recipe-card p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  /* ----- CONTACT SECTION ----- */
+  .contact {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    max-width: 900px;
+    color: #333;
+    border-radius: 5px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 1.5rem;
+    color: #FF6B00;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  .contact p {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  .contact button {
+    background-color: #FF6B00;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .contact button:hover {
+    background-color: #ff7f1a;
+  }
+  
+  /* ----- RESPONSIVE ADJUSTMENTS ----- */
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none; /* Hide sidebar on smaller screens or handle with a menu toggle */
+    }
+    .main-content {
+      padding: 1rem;
+    }
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+    .search-input {
+      width: 80%;
+    }
+    .trending, .contact {
+      padding: 1rem;
+    }
+    .trending-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

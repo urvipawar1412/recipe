@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Sharing Platform</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body class="bg-background text-foreground">
+  <!-- Header with Logo -->
+  <header>
+    <img src="logo.png" alt="Recipe Sharing Platform Logo" class="logo">
+  </header>
+
+  <!-- Main Container: two sections side by side -->
+  <div class="flex flex-row items-stretch gap-8 p-4">
+    <!-- Discover Section -->
+    <div class="flex-1 bg-card p-6 rounded-lg shadow-lg transition-transform transform hover-scale">
+      <h1 class="text-4xl font-bold text-primary">Discover New Recipes Every Day</h1>
+      <h2 class="mt-4">Join our community and explore a world of culinary delights!</h2>
+      <p class="mt-4">Find recipes from top chefs, food bloggers, and home cooks worldwide.</p>
+      <p class="mt-4">Share your creations and get feedback from fellow food enthusiasts.</p>
+      
+      <!-- Testimonials Slider -->
+      <div class="testimonial-slider">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <div class="testimonial-container">
+            <p class="testimonial-text">
+              "This platform is a game-changer! It's easy to use, provides valuable insights, and has helped me connect with fellow food lovers. I highly recommend it!"
+            </p>
+            <span class="testimonial-author">Casey Bachmeyer</span>
+            <span class="testimonial-role">Recipe Enthusiast</span>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-container">
+            <p class="testimonial-text">
+              "I love the diverse collection of recipes available. It's a must-have platform for every food lover!"
+            </p>
+            <span class="testimonial-author">Emma Larson</span>
+            <span class="testimonial-role">Home Chef</span>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-container">
+            <p class="testimonial-text">
+              "The design and usability are exceptional. Navigating through recipes is a breeze!"
+            </p>
+            <span class="testimonial-author">John Doe</span>
+            <span class="testimonial-role">Food Critic</span>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-container">
+            <p class="testimonial-text">
+              "Every recipe tells a story, and this platform brings them to life beautifully."
+            </p>
+            <span class="testimonial-author">Sarah Lee</span>
+            <span class="testimonial-role">Culinary Enthusiast</span>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-container">
+            <p class="testimonial-text">
+              "A seamless blend of creativity and technology, making cooking more inspiring."
+            </p>
+            <span class="testimonial-author">Michael Green</span>
+            <span class="testimonial-role">Chef</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+      </div>
+    </div>
+    
+    <!-- Create Account Section -->
+    <div class="flex-1 bg-card p-6 rounded-lg shadow-lg transition-transform transform hover-scale">
+      <h2 class="text-4xl font-bold text-primary">Create an Account</h2>
+      <form class="mt-4">
+        <!-- Row 1: Full Name & Username with tooltip -->
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" placeholder="Full name" class="input-field" required />
+          </div>
+          <div class="form-group tooltip-container" id="username-container">
+            <input type="text" id="username" placeholder="Username" class="input-field" required />
+            <div id="username-tooltip" class="tooltip-pop inside">
+              Enter a unique username (6-12 characters).
+            </div>
+          </div>
+        </div>
+        <!-- Row 2: Phone Number & Email -->
+        <div class="form-row">
+          <div class="form-group">
+            <input type="tel" placeholder="Phone number" class="input-field" required />
+            <button type="button" class="otp-button">Get OTP</button>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" class="input-field" required />
+          </div>
+        </div>
+        <!-- Row 3: Password & Confirm Password with tooltip for password -->
+        <div class="form-row">
+          <div class="form-group tooltip-container" id="password-container">
+            <input type="password" id="password" placeholder="Password" class="input-field" required />
+            <div id="password-tooltip" class="tooltip-pop inside">
+              Password must include uppercase, lowercase, and a number.
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Confirm Password" class="input-field" required />
+          </div>
+        </div>
+        <!-- OTP Input Field -->
+        <div class="form-group">
+          <input type="text" placeholder="OTP" class="input-field" required />
+        </div>
+        <!-- Privacy Policy -->
+        <div class="form-group">
+          <label class="flex items-center">
+            <input type="checkbox" required class="mr-2" />
+            <span>I accept the <a href="#">Privacy Policy</a></span>
+          </label>
+        </div>
+        <!-- Centered Create Account Button -->
+        <div class="form-group text-center">
+          <button type="submit" class="create-button">Create an Account</button>
+        </div>
+      </form>
+      <p class="mt-4 text-center text-muted-foreground">
+        Already have an account? <a href="#">Log In</a>
+      </p>
+    </div>
+  </div>
+  
+  <!-- Testimonial Slider JavaScript -->
+  <script>
+    const dots = document.querySelectorAll('.dot');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    dots.forEach(dot => {
+      dot.addEventListener('click', function(){
+        const index = parseInt(this.getAttribute('data-index'));
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => {
+          d.classList.toggle('active', i === index);
+        });
+      });
+    });
+  </script>
+  <script>
+    // Tooltip functionality for Create Account fields
+    function addTooltipListeners(inputId, containerId) {
+      const input = document.getElementById(inputId);
+      const container = document.getElementById(containerId);
+      
+      input.addEventListener('focus', function() {
+        container.classList.add('show-tooltip');
+      });
+      input.addEventListener('blur', function() {
+        container.classList.remove('show-tooltip');
+      });
+    }
+    addTooltipListeners('username', 'username-container');
+    addTooltipListeners('password', 'password-container');
+    
+    // Optionally hide tooltip if clicking outside the container
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('username-container').contains(e.target)) {
+        document.getElementById('username-container').classList.remove('show-tooltip');
+      }
+      if (!document.getElementById('password-container').contains(e.target)) {
+        document.getElementById('password-container').classList.remove('show-tooltip');
+      }
+    });
+  </script>
+</body>
+</html>

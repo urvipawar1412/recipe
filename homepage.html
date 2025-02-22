@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Search</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- SIDEBAR / NAV -->
+    <aside class="sidebar">
+      <div>
+        <!-- LOGO SECTION -->
+        <div class="logo-section">
+          <img 
+            src="logo.png" 
+            alt="Logo" 
+            class="logo"
+          />
+          <span class="logo-text"></span>
+        </div>
+        <!-- NAV LINKS -->
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Recipes</a>
+          <a href="#">Partnership</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+      <!-- BOTTOM BUTTON -->
+      <button class="message-btn">Send us a message</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>
+            Search among <span>12,550 recipes</span>
+          </h1>
+          <p>
+            "Cook. Connect. Create. Discover a vibrant community where every dish sparks inspiration and every recipe tells a story."
+        </div>
+        
+        <input 
+          type="text" 
+          placeholder="Enter your search" 
+          class="search-input" 
+        />
+        
+        <!-- CATEGORY BUTTONS -->
+        <div class="categories">
+          <button class="category-btn">
+            <img src="lunch.png" alt="Lunches">
+            <span>Lunches</span>
+          </button>
+          <button class="category-btn">
+            <img src="soup.png" alt="Soups">
+            <span>Soups</span>
+          </button>
+          <button class="category-btn">
+            <img src="breakfast.png" alt="Breakfast">
+            <span>Breakfast</span>
+          </button>
+          <button class="category-btn">
+            <img src="snacks.png" alt="Snacks">
+            <span>Snacks</span>
+          </button>
+          <button class="category-btn">
+            <img src="others.png" alt="Other">
+            <span>Other</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- TRENDING RECIPES -->
+      <section class="trending">
+        <div class="trending-header">
+          <img 
+            src="trending.png" 
+            alt="Trending Logo"
+          />
+          <h2>Trending Recipes</h2>
+        </div>
+        <div class="trending-grid">
+          <div class="recipe-card">
+            <h3>Recipe 1</h3>
+            <p>Delicious and healthy.</p>
+          </div>
+          <div class="recipe-card">
+            <h3>Recipe 2</h3>
+            <p>Quick and easy to make.</p>
+          </div>
+          <div class="recipe-card">
+            <h3>Recipe 3</h3>
+            <p>Perfect for dinner.</p>
+          </div>
+          <div class="recipe-card">
+            <h3>Recipe 4</h3>
+            <p>A family favorite.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Have a question or feedback? Reach out to us!</p>
+        <button>Contact</button>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

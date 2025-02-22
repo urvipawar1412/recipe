@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Multi-Step Form</title>
+  <link rel="stylesheet" href="details.css"/>
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-container" id="progress-container">
+    <div class="steps-wrapper">
+      <!-- Active progress overlay -->
+      <div class="progress-line-active"></div>
+      
+      <!-- Step 1 -->
+      <div class="step active">
+        <div class="circle">1</div>
+        <span class="label">Personal Info</span>
+      </div>
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="circle">2</div>
+        <span class="label">Preferences</span>
+      </div>
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="circle">3</div>
+        <span class="label">Share Recipe</span>
+      </div>
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="circle">4</div>
+        <span class="label">Preview</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-Step Form Content -->
+  <div class="form-content">
+    <!-- Step 1: Personal Information -->
+    <div class="form-step active" id="step-1">
+      <h2>Personal Information</h2>
+      <form id="form-step-1">
+        <!-- Photo Field with Circular Preview -->
+        <label for="photo">Photo:</label>
+        <div class="photo-container">
+          <img id="photo-preview" src="default-avatar.png" alt="Photo Preview">
+        </div>
+        <input type="file" id="photo" accept="image/*">
+        
+        <!-- Name -->
+        <label for="name">Nickname:</label>
+        <input type="text" id="name" placeholder="Enter your Nickname(Eg:S)" required>
+    
+        <!-- Gender -->
+        <label>Gender:</label>
+        <div class="option-group">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female" required> Female</label>
+          <label><input type="radio" name="gender" value="other" required> Other</label>
+        </div>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+        
+        <!-- Occupation -->
+        <label for="occupation">Occupation:</label>
+        <select id="occupation" required>
+          <option value="">Select Occupation</option>
+          <option value="chef">Chef</option>
+          <option value="home_cook">Home Cook</option>
+          <option value="food_blogger">Food Blogger</option>
+          <option value="other">Other</option>
+        </select>
+        
+        <!-- Cooking Level Range -->
+        <label for="cooking-level-range">Cooking Level:</label>
+        <input type="range" id="cooking-level-range" min="0" max="10" value="0" step="1">
+        <span id="cooking-level-value">Beginner</span>
+        
+        <!-- State (India) -->
+        <label for="state">State:</label>
+        <select id="state" required>
+          <option value="">Select State</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="tamil_nadu">Tamil Nadu</option>
+          <option value="kerala">Kerala</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="delhi">Delhi</option>
+        </select>
+        
+        <!-- City -->
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="Enter your city" required>
+        
+        <button type="button" id="progress-next-btn">Next</button>
+      </form>
+    </div>
+
+    <!-- Step 2: Preference Details -->
+    <div class="form-step" id="step-2">
+      <h2>Preference Details</h2>
+      <form id="form-step-2">
+        <!-- Dietary Lifestyles Section -->
+        <div class="section dietary-lifestyles">
+          <h3>Dietary Lifestyles</h3>
+          <div class="option-group">
+            <button type="button" class="option-btn">Vegetarian</button>
+            <button type="button" class="option-btn">Non Vegetarian</button>
+            <button type="button" class="option-btn">Vegan</button>
+            <button type="button" class="option-btn">Pescatarian</button>
+            <button type="button" class="option-btn">Eggetarian</button>
+            <button type="button" class="option-btn">Healthy</button>
+          </div>
+        </div>
+    
+        <!-- Cuisines Section -->
+        <div class="section cuisines">
+          <h3>Cuisines</h3>
+          <div class="option-group">
+            <button type="button" class="option-btn">Indian</button>
+            <button type="button" class="option-btn">Chinese</button>
+            <button type="button" class="option-btn">Italian</button>
+            <button type="button" class="option-btn">Mexican</button>
+            <button type="button" class="option-btn">Korean</button>
+            <button type="button" class="option-btn">Thai</button>
+            <button type="button" class="option-btn">Japanese</button>
+            <button type="button" class="option-btn">Vietnamese</button>
+            <button type="button" class="option-btn">Greek</button>
+            <button type="button" class="option-btn">British</button>
+            <button type="button" class="option-btn">French</button>
+            <button type="button" class="option-btn">Spanish</button>
+            <button type="button" class="option-btn">Turkish</button>
+            <button type="button" class="option-btn">Lebanese</button>
+            <button type="button" class="option-btn">American</button>
+            <button type="button" class="option-btn">Hawaiian</button>
+          </div>
+        </div>
+    
+        <!-- Preferable Taste Buds Section -->
+        <div class="section taste-preferences">
+          <h3>Preferable Taste Buds</h3>
+          <div class="option-group">
+            <button type="button" class="option-btn">Spicy</button>
+            <button type="button" class="option-btn">Hot Spicy</button>
+            <button type="button" class="option-btn">Sweet</button>
+            <button type="button" class="option-btn">Sour</button>
+            <button type="button" class="option-btn">Salty</button>
+            <button type="button" class="option-btn">Bitter</button>
+            <button type="button" class="option-btn">Umami</button>
+          </div>
+        </div>
+    
+        <!-- Preferable Meals Section -->
+        <div class="section preferable-meals">
+          <h3>Preferable Meals</h3>
+          <div class="option-group">
+            <button type="button" class="option-btn">Breakfast</button>
+            <button type="button" class="option-btn">Brunch</button>
+            <button type="button" class="option-btn">Lunch</button>
+            <button type="button" class="option-btn">Tea/Snacks</button>
+            <button type="button" class="option-btn">Dinner</button>
+            <button type="button" class="option-btn">Supper</button>
+            <button type="button" class="option-btn">Party Meal</button>
+          </div>
+        </div>
+    
+        <div class="nav-buttons">
+          <button type="button" id="progress-prev-btn">Previous</button>
+          <button type="button" id="progress-next-btn-2">Next</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Step 3: Share Recipe -->
+    <div class="form-step" id="step-3">
+      <h2>Excited to share your first recipe?</h2>
+      <form id="form-step-3">
+        <!-- Recipe Name -->
+        <label for="recipe-name">Recipe Name:</label>
+        <input type="text" id="recipe-name" placeholder="Enter recipe name" required>
+        
+        <!-- Cuisine Type -->
+        <label for="cuisine-type">Cuisine Type:</label>
+        <select id="cuisine-type" required>
+          <option value="">Select Cuisine</option>
+          <option value="indian">Indian</option>
+          <option value="chinese">Chinese</option>
+          <option value="italian">Italian</option>
+          <option value="mexican">Mexican</option>
+          <option value="korean">Korean</option>
+          <option value="thai">Thai</option>
+          <option value="japanese">Japanese</option>
+          <option value="vietnamese">Vietnamese</option>
+          <option value="greek">Greek</option>
+          <option value="british">British</option>
+          <option value="french">French</option>
+          <option value="spanish">Spanish</option>
+          <option value="turkish">Turkish</option>
+          <option value="lebanese">Lebanese</option>
+          <option value="american">American</option>
+          <option value="hawaiian">Hawaiian</option>
+        </select>
+        
+        <!-- Serving Size -->
+        <label for="serving-size">Serving Size:</label>
+        <select id="serving-size" required>
+          <option value="">Select Serving Size</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5">5+ People</option>
+        </select>
+        
+        <!-- Preparation & Cooking Time -->
+        <label for="prep-time">Preparation & Cooking Time:</label>
+        <select id="prep-time" required>
+          <option value="">Select Time</option>
+          <option value="<30">Less than 30 minutes</option>
+          <option value="30-60">30-60 minutes</option>
+          <option value="60-120">1-2 hours</option>
+          <option value=">120">More than 2 hours</option>
+        </select>
+        
+        <!-- Ingredients Section -->
+        <label>Ingredients:</label>
+        <p>Enter each ingredient with its quantity:</p>
+        <div id="ingredients-container">
+          <div class="ingredient-row">
+            <input type="text" class="ingredient-qty" placeholder="Quantity" required>
+            <input type="text" class="ingredient-name" placeholder="Item Name" required>
+          </div>
+        </div>
+        <button type="button" id="add-ingredient-btn">Add Ingredient</button>
+        
+        <!-- Cooking Instructions -->
+        <label for="cooking-instructions">Cooking Instructions:</label>
+        <textarea id="cooking-instructions" placeholder="Enter detailed instructions" rows="6" required></textarea>
+        
+        <!-- Spice Level -->
+        <label for="spice-level">Spice Level:</label>
+        <select id="spice-level" required>
+          <option value="">Select Spice Level</option>
+          <option value="spicy">Spicy</option>
+          <option value="hot_spicy">Hot Spicy</option>
+          <option value="sweet">Sweet</option>
+          <option value="sour">Sour</option>
+          <option value="salty">Salty</option>
+          <option value="bitter">Bitter</option>
+          <option value="umami">Umami</option>
+        </select>
+        
+        <!-- Allergen Info -->
+        <label for="allergen-info">Allergen Info (if any):</label>
+        <input type="text" id="allergen-info" placeholder="List allergens, if applicable">
+        
+        <!-- Recipe Type -->
+        <label>Recipe Type:</label>
+        <div class="option-group">
+          <label><input type="radio" name="recipe-type" value="self_created" required> Self-Created</label>
+          <label><input type="radio" name="recipe-type" value="inspired_by" required> Inspired by Another</label>
+          <label><input type="radio" name="recipe-type" value="copied" required> Copied</label>
+        </div>
+        
+        <!-- Media Upload -->
+        <label>Media Upload:</label>
+        <p>Upload Videos and Images:</p>
+        <input type="file" id="recipe-images" accept="image/*" multiple>
+        <input type="file" id="recipe-video" accept="video/*">
+        
+        <!-- Contributors Name -->
+        <label for="contributors">Contributors Name:</label>
+        <input type="text" id="contributors" placeholder="Enter contributors' name">
+        
+        <div class="nav-buttons">
+          <button type="button" id="progress-prev-btn-2">Previous</button>
+          <!-- When Next is clicked, we build the preview report -->
+          <button type="button" id="progress-next-btn-3">Next</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Step 4: (Preview Report) -->
+    <div class="form-step" id="step-4">
+      <h2>Preview Your Recipe!</h2>
+      <div id="preview-report">
+        <!-- The preview report will be populated here based on the recipe input -->
+      </div>
+      <div class="nav-buttons">
+        <!-- Previous button to go back to Step 3 -->
+        <button type="button" id="progress-prev-btn-3">Previous</button>
+        <!-- Home button resets to Step 1 -->
+        <button type="button" id="home-btn">Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Navigation & Step Control
+    const steps = document.querySelectorAll(".step");
+    const progressLineActive = document.querySelector(".progress-line-active");
+    const formSteps = document.querySelectorAll(".form-step");
+    let totalSteps = steps.length;
+    let currentStep = 1;
+
+    function updateProgress() {
+      steps.forEach((step, index) => {
+        step.classList.toggle("active", index < currentStep);
+      });
+      const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+      progressLineActive.style.width = progressPercent + "%";
+
+      formSteps.forEach((formStep, index) => {
+        formStep.classList.toggle("active", index === currentStep - 1);
+        formStep.style.display = index === currentStep - 1 ? "block" : "none";
+      });
+    }
+
+    // Direct step navigation
+    steps.forEach((step, index) => {
+      step.addEventListener("click", () => {
+        currentStep = index + 1;
+        updateProgress();
+      });
+    });
+
+    // Navigation button event listeners for Steps 1 and 2
+    document.getElementById("progress-next-btn").addEventListener("click", () => {
+      currentStep = Math.min(currentStep + 1, totalSteps);
+      updateProgress();
+    });
+    document.getElementById("progress-prev-btn")?.addEventListener("click", () => {
+      currentStep = Math.max(currentStep - 1, 1);
+      updateProgress();
+    });
+    document.getElementById("progress-next-btn-2")?.addEventListener("click", () => {
+      currentStep = Math.min(currentStep + 1, totalSteps);
+      updateProgress();
+    });
+    document.getElementById("progress-prev-btn-2")?.addEventListener("click", () => {
+      currentStep = Math.max(currentStep - 1, 1);
+      updateProgress();
+    });
+    
+    // Handle Next button in Step 3 to build preview report
+    document.getElementById("progress-next-btn-3").addEventListener("click", () => {
+      // Collect input values from the Share Recipe form
+      const recipeName = document.getElementById("recipe-name").value;
+      const cuisineType = document.getElementById("cuisine-type").value;
+      const servingSize = document.getElementById("serving-size").value;
+      const prepTime = document.getElementById("prep-time").value;
+      const ingredients = [];
+      document.querySelectorAll(".ingredient-row").forEach(row => {
+        const qty = row.querySelector(".ingredient-qty").value;
+        const item = row.querySelector(".ingredient-name").value;
+        if(qty && item){
+          ingredients.push(`${qty} ${item}`);
+        }
+      });
+      const instructions = document.getElementById("cooking-instructions").value;
+      const spiceLevel = document.getElementById("spice-level").value;
+      const allergenInfo = document.getElementById("allergen-info").value;
+      const recipeType = document.querySelector('input[name="recipe-type"]:checked')?.value || "";
+      const contributors = document.getElementById("contributors").value;
+      
+      // Build the preview HTML report
+      let previewHTML = `<h3>Recipe Preview</h3>`;
+      previewHTML += `<p><strong>Recipe Name:</strong> ${recipeName}</p>`;
+      previewHTML += `<p><strong>Cuisine Type:</strong> ${cuisineType}</p>`;
+      previewHTML += `<p><strong>Serving Size:</strong> ${servingSize}</p>`;
+      previewHTML += `<p><strong>Preparation Time:</strong> ${prepTime}</p>`;
+      previewHTML += `<p><strong>Ingredients:</strong> ${ingredients.join(", ")}</p>`;
+      previewHTML += `<p><strong>Cooking Instructions:</strong> ${instructions}</p>`;
+      previewHTML += `<p><strong>Spice Level:</strong> ${spiceLevel}</p>`;
+      previewHTML += `<p><strong>Allergen Info:</strong> ${allergenInfo}</p>`;
+      previewHTML += `<p><strong>Recipe Type:</strong> ${recipeType}</p>`;
+      previewHTML += `<p><strong>Contributors:</strong> ${contributors}</p>`;
+      
+      document.getElementById("preview-report").innerHTML = previewHTML;
+      
+      // Move to Step 4 (Home)
+      currentStep = Math.min(currentStep + 1, totalSteps);
+      updateProgress();
+    });
+    
+    // Previous button in Home goes back to Step 3 for editing
+    document.getElementById("progress-prev-btn-3").addEventListener("click", () => {
+      currentStep = Math.max(currentStep - 1, 1);
+      updateProgress();
+    });
+
+    // Home button resets the form to Step 1
+    document.getElementById("home-btn").addEventListener("click", () => {
+      currentStep = 1;
+      updateProgress();
+    });
+
+    // Photo preview for profile picture
+    document.getElementById('photo').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          document.getElementById('photo-preview').src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Toggle button selections in preference sections
+    document.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('selected');
+      });
+    });
+
+    // Cooking level range update
+    const cookingRange = document.getElementById("cooking-level-range");
+    const cookingValue = document.getElementById("cooking-level-value");
+    if(cookingRange && cookingValue) {
+      const updateCookingLevel = () => {
+        const val = parseInt(cookingRange.value);
+        let levelText = "Beginner";
+        if(val >= 4 && val < 7) {
+          levelText = "Intermediate";
+        } else if(val >= 7) {
+          levelText = "Expert";
+        }
+        cookingValue.textContent = levelText;
+      };
+      cookingRange.addEventListener("input", updateCookingLevel);
+      updateCookingLevel();
+    }
+
+    // Add new ingredient row functionality
+    document.getElementById("add-ingredient-btn").addEventListener("click", () => {
+      const container = document.getElementById("ingredients-container");
+      const row = document.createElement("div");
+      row.classList.add("ingredient-row");
+      row.innerHTML = `
+        <input type="text" class="ingredient-qty" placeholder="Quantity" required>
+        <input type="text" class="ingredient-name" placeholder="Item Name" required>
+      `;
+      container.appendChild(row);
+    });
+
+    // Initial render
+    updateProgress();
+  </script>
+  <script>
+    <button type="button" id="home-btn" class="home-btn" onclick="window.location.href='homepage.html'">Home</button>
+
+  </script>
+</body>
+</html>

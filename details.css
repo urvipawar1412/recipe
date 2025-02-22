@@ -1,0 +1,256 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF9F4;
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* Progress Bar Container */
+  .progress-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+  }
+  .steps-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* Inactive Background Line */
+  .steps-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #ccc;
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+  /* Active Progress Line */
+  .progress-line-active {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background-color: #d7263d;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+    width: 0%;
+  }
+  /* Step Styles */
+  .step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  .step.active .circle {
+    background-color: #d7263d;
+  }
+  .step.active .label {
+    color: #333;
+  }
+  
+  /* Form Content */
+  .form-content {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .form-step {
+    display: none;
+  }
+  .form-step.active {
+    display: block;
+  }
+  .form-step h2 {
+    margin-bottom: 15px;
+    color: #d7263d;
+  }
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  form button {
+    background-color: #d7263d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  form button:hover {
+    background-color: #b51f35;
+  }
+  
+  /* Photo Preview (Circular) */
+  .photo-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+  }
+  .photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Preference Sections */
+  .section {
+    margin-bottom: 20px;
+  }
+  .section h3 {
+    margin-bottom: 10px;
+    color: #d7263d;
+    font-size: 1.1rem;
+  }
+  .option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .option-btn {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    font-size: 0.9rem;
+  }
+  .option-btn:hover {
+    background-color: #f8f8f8;
+  }
+  .option-btn.selected,
+  .option-btn.active {
+    background-color: #d7263d;
+    border-color: #d7263d;
+    color: #fff;
+  }
+  
+  /* Navigation Buttons */
+  .nav-buttons {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .nav-buttons button {
+    background-color: #d7263d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .nav-buttons button:hover {
+    background-color: #b51f35;
+  }
+  /* Custom style for the Previous button in the Home section */
+  #progress-prev-btn-3 {
+    background-color: #f00;
+    border: 2px solid #b00;
+  }
+  
+  /* Cooking Level Range Slider */
+  #cooking-level-range {
+    width: 150px;
+    height: 5px;
+    -webkit-appearance: none;
+    background: #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  #cooking-level-range::-webkit-slider-thumb,
+  #cooking-level-range::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #d7263d;
+    cursor: pointer;
+  }
+  #cooking-level-value {
+    font-size: 0.85rem;
+    margin-left: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .steps-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    .steps-wrapper::before,
+    .progress-line-active {
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+    .step {
+      margin-bottom: 20px;
+    }
+    .circle {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+    }
+    .label {
+      font-size: 0.85rem;
+    }
+    .option-group {
+      flex-direction: column;
+    }
+  }
